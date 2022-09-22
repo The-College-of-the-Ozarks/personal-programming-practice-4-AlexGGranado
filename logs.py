@@ -10,4 +10,8 @@ def g(x):
 x = input("Input the value for x: ")
 x = float(x)
 
-print("g(" + str(x) + ") = " + str(g(x)))
+#Ensure valid option and spits out annswer
+if -10<x<=7:
+    print("g(" + str(x) + ") = " + str(g(x)))
+else:
+    print("ERROR: Invalid input detected.")

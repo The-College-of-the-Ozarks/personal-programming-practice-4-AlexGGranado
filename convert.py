@@ -8,6 +8,14 @@
 #   mph -> ft/s
 #   mph -> m/s
 
+# Menu
+print ("Which conversion would you like to use?")
+print ("1: KPH")
+print ("2: m/s")
+print ("3: ft/s")
+choice = input("Input the number corresponding to your choice: ")
+
+# Define
 def mph_to_kph(mph):
     return 1.609*mph
 
@@ -17,11 +25,24 @@ def mph_to_ms(mph):
 def mph_to_fts(mph):
     return mph*5280/3600
 
-mph = input("Input speed in mph: ")
-mph = float(mph)
+def get_mph():
+    mph = input("Input speed in mph: ")
+    mph = float(mph)
+    return mph
 
-print("Speed in kph is", mph_to_kph(mph))
+#Check choice
+if choice == "1":
+    #Call get_mph and convert
+    mph = get_mph()
+    print("Speed in kph is", mph_to_kph(mph))
 
-print("Speed in m/s is", mph_to_ms(mph))
+elif choice == "2":
+    mph = get_mph()
+    print("Speed in m/s is", mph_to_ms(mph))
 
-print("Speed in ft/s is", mph_to_fts(mph))
+elif choice == "3":
+    mph = get_mph()
+    print("Speed in ft/s is", mph_to_fts(mph))
+else:
+    #Reports an invalid option
+    print("Invalid menu option")
